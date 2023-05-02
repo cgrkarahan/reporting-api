@@ -4,7 +4,7 @@
 
 ## What is this repository for? ##
 
-* The Reporting API is a project developed using Spring Boot that allows you to manage payment information through APIs. With this project, you can easily collect payment information through RESTful APIs.
+* The Reporting API is a project developed using Spring Boot that allows you to manage and collect payment information through APIs. With this project, you can easily collect payment information through RESTful APIs.
   
 
 ## Prerequisites ##
@@ -21,7 +21,6 @@
 
 ## Running Project ##
 * To start the application on localhost:8080, run the command below on the terminal.
-  #### localhost:8080 ####
 
 ``` mvn spring-boot:run ```
 
@@ -38,7 +37,7 @@ Token is created by using /authenticate
 
 The generated token should be sent in the HTTP header with a __Bearer__ prefix for each request.
 
-#Documentation
+##Documentation ##
 The Reporting API documentation is available  through Swagger.
 ![img.png](img.png)
 

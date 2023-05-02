@@ -31,6 +31,13 @@ public class TransactionServiceImpl implements TransactionService {
     private static final String AUTHORIZATION= "Authorization";
 
 
+    /**
+
+     Retrieves transaction details for the given transaction ID.
+     @param transactionId the ID of the transaction to retrieve
+     @return an optional containing the transaction details, or empty if the transaction is not found
+     @throws ServerResponseException if there was a problem retrieving the transaction details from the API
+     */
     @Override
     public Optional<TransactionResponse> getTransaction(String transactionId) {
 
@@ -63,6 +70,16 @@ public class TransactionServiceImpl implements TransactionService {
 
     }
 
+    /**
+
+     Retrieves a report of transactions for the specified date range, merchant ID, and acquirer ID.
+     @param fromDate the starting date of the transaction report range
+     @param toDate the ending date of the transaction report range
+     @param merchantId the ID of the merchant to filter the transaction report by, or null to include all merchants
+     @param acquirerId the ID of the acquirer to filter the transaction report by, or null to include all acquirers
+     @return an optional containing the transaction report, or empty if there was an error retrieving the report
+     @throws ServerResponseException if there was a problem retrieving the transaction report from the API
+     */
 
     @Override
     public Optional<TransactionReportResponse> getTransactionReport(LocalDate fromDate, LocalDate toDate, Long merchantId, Long acquirerId) {
@@ -121,6 +138,23 @@ public class TransactionServiceImpl implements TransactionService {
 
     }
 
+    /**
+
+     Returns a list of transactions based on the provided search criteria.
+     @param fromDate the start date of the search
+     @param toDate the end date of the search
+     @param status the transaction status to search for
+     @param operation an array of operations to search for
+     @param merchantId the ID of the merchant to search for
+     @param acquirerId the ID of the acquirer to search for
+     @param paymentMethod the payment method to search for
+     @param errorCode the error code to search for
+     @param filterField the field to filter by
+     @param filterValue the value to filter by
+     @param page the page number to return
+     @return an optional TransactionListResponse object containing the list of transactions matching the search criteria
+     @throws ServerResponseException if there is an error while calling the service
+     */
     @Override
     public Optional<TransactionListResponse> getTransactions(LocalDate fromDate,
                                                              LocalDate toDate,

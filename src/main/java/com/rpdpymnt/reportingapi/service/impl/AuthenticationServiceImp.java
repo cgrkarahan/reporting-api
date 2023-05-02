@@ -6,6 +6,7 @@ import com.rpdpymnt.reportingapi.dto.AuthenticationRequest;
 import com.rpdpymnt.reportingapi.dto.AuthenticationResponse;
 import com.rpdpymnt.reportingapi.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.User;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 
 @Service
 @RequiredArgsConstructor
-
+@Slf4j
 public class AuthenticationServiceImp implements AuthenticationService {
 
     private final PasswordEncoder passwordEncoder;
@@ -25,6 +26,8 @@ public class AuthenticationServiceImp implements AuthenticationService {
 
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
+        log.info("authentication service triggered");
+
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
                         request.getEmail(),
