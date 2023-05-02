@@ -33,7 +33,12 @@
 ## Authentication ##
 Reporting API project uses Oauth2 authentication mechanism in order to create JTW token.
 
-Token is created by using /authenticate
+Token is created by using api/v1/auth/authenticate resource.
+
+email:adminUser
+password:"12345
+
+
 
 The generated token should be sent in the HTTP header with a __Bearer__ prefix for each request.
 
