@@ -38,7 +38,12 @@ Token is created by using /authenticate
 The generated token should be sent in the HTTP header with a __Bearer__ prefix for each request.
 
 ##Documentation ##
-The Reporting API documentation is available  through Swagger.
+The Reporting API documentation is available through Swagger.
+
+``` 
+http://localhost:8080/swagger-ui/index.html#/
+```
+
 ![img.png](img.png)
 
 ## Containerization ##
